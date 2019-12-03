@@ -1,9 +1,12 @@
 <aura:component implements="flexipage:availableforAllPageTypes,force:appHostable" access="global">
-	<c:StudentBrowserForm/>
-<h1>Filter Form Goes Here!!</h1>
+	
+<div class="slds-m-bottom_small">
+<c:StudentBrowserForm/>
+<c:TestApp/>
+</div>
 <lightning:tabset variant="scoped">
 	<lightning:tab title="Gallery" label="Gallery">
-		Photo Gallery goes here!!
+		<c:StudentTile selected="true"/>
 	</lightning:tab>
 </lightning:tabset>
 </aura:component>	

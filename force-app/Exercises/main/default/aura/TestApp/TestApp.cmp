@@ -1,0 +1,5 @@
+<aura:component>
+		<aura:attribute name="num1" type="decimal" default="4"/>
+		<aura:attribute name="num2" type="decimal" default="5"/>
+	<h1>the sum of attribute {!add(v.num1,v.num2) }</h1>
+</aura:component>	
