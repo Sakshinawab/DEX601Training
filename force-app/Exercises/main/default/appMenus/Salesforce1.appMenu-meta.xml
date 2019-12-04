@@ -29,6 +29,10 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
+        <name>Panic_Button_Test</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>AWInstructors</name>
         <type>CustomTab</type>
     </appMenuItems>

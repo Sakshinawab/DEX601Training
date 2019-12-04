@@ -10,6 +10,18 @@ recordId="{!v.contactId}"
 targetFields="{!v.contact}"
 targetError="{!v.recordError}"
 fields="Name,Email,Phone,Description" />
+<aura:if isTrue="{!v.contactId != ''}">
 <lightning:card title="{!v.contact.Name}" >
+	<aura:set attribute ="actions">
+		<lightning:button label="Go to Record" onclick="{!c.onGoToRecord}">
+
+		</lightning:button>
+		</aura:set>
+		
+	<lightning:formattedEmail value="{!v.contact.Email}"/>
+     <br></br>
+	<lightning:formattedPhone value ="{!v.contact.Phone}"/>
+	{!v.contact.Description}
 </lightning:card>
+</aura:if>
 </aura:component>	
