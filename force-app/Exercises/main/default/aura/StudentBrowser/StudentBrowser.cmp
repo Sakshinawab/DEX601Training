@@ -6,6 +6,8 @@ controller="StudentBrowser" extends="c:Base">
 type="String" default="" />
 <aura:attribute name="selectedContactId" access="private"
 type="String" default="" />
+<aura:registerEvent name="broadcastStudentSelected"
+type="c:AwInstructorsStudentSelected"/>
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 	<aura:handler name="onStudentSelected" event="c:StudentSelected"
 action="{!c.onStudentSelected}"/>

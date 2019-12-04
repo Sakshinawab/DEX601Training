@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes"
+access="global" >
+<aura:attribute name="contactId" type="String" access="private" default=""/>
+<aura:attribute name="contact" type="Contact" access="public" />
+<aura:attribute name="recordError" type="String" access="private" />
+<aura:handler event="c:AwInstructorsStudentSelected"
+action="{!c.onStudentSelected}"/>
+<force:recordData aura:id="recordLoader"
+recordId="{!v.contactId}"
+targetFields="{!v.contact}"
+targetError="{!v.recordError}"
+fields="Name,Email,Phone,Description" />
+<lightning:card title="{!v.contact.Name}" >
+</lightning:card>
+</aura:component>	

@@ -9,6 +9,9 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
+            <componentName>StudentDetail</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>context</name>
                 <value>BOOKMARKS</value>

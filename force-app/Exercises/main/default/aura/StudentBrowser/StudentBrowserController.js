@@ -13,5 +13,6 @@ helper.onInit(component,event,helper);
 		onStudentSelected: function(component,event,helper) {
 			var contactId = event.getParam('contactId');
 			component.set('v.selectedContactId',contactId);
+			helper.broadcastStudentSelected(component);
 		}
 })
