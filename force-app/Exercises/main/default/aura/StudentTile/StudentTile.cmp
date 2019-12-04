@@ -5,7 +5,9 @@
 	 'Name':'Leo Moreau',
 	 'PhotoUrl':'/services/images/photo/0031g00000ef1MOAAY'}" access="public"/>
 	 <aura:attribute name="selected" type="boolean" access="public" default="false"/>
-	 <div class="{! v.selected ? 'tile selected':'tile'}">
+	 
+	 <aura:registerEvent name="onStudentSelected" type="c:StudentSelected" />
+	 <div class="{! v.selected ? 'tile selected':'tile'}" onclick="{!c.onStudentClick}">
 			<div class="innertile">
 				<img src="{#v.student.PhotoUrl}" class="innertile" />
 				<div class="lower-third">

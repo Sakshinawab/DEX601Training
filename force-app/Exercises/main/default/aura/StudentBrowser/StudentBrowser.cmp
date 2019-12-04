@@ -1,12 +1,22 @@
-<aura:component implements="flexipage:availableforAllPageTypes,force:appHostable" access="global">
-	
+<aura:component implements="flexipage:availableforAllPageTypes,force:appHostable" 
+access="global" 
+controller="StudentBrowser" extends="c:Base">
+	<aura:attribute name="studentList" type="Contact[]" access="Private"/>
+	<aura:attribute name="selectedCourseDeliveryId" access="private"
+type="String" default="" />
+<aura:attribute name="selectedContactId" access="private"
+type="String" default="" />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:handler name="onStudentSelected" event="c:StudentSelected"
+action="{!c.onStudentSelected}"/>
+	<!-- <lightning:card title="Filter student" iconName="utility:search"> -->
 <div class="slds-m-bottom_small">
-<c:StudentBrowserForm/>
-<c:TestApp/>
+<c:StudentBrowserForm onStudentFilterChange="{!c.onStudentFilterChange}"/>
 </div>
+<!-- </lightning:card> -->
 <lightning:tabset variant="scoped">
 	<lightning:tab title="Gallery" label="Gallery">
-		<c:StudentTile selected="true"/>
+		<c:StudentTiles students="{!v.studentList}" selectedStudentId="{!v.selectedContactId}"/>
 	</lightning:tab>
 </lightning:tabset>
 </aura:component>	
