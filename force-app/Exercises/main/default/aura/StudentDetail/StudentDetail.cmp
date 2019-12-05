@@ -22,6 +22,7 @@ fields="Name,Email,Phone,Description" />
      <br></br>
 	<lightning:formattedPhone value ="{!v.contact.Phone}"/>
 	{!v.contact.Description}
+	<c:StudentDetailAccordion contactId="{!v.contactId}" />
 </lightning:card>
 </aura:if>
 </aura:component>	
