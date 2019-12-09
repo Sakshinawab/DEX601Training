@@ -11,6 +11,8 @@ type="c:AwInstructorsStudentSelected"/>
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 	<aura:handler name="onStudentSelected" event="c:StudentSelected"
 action="{!c.onStudentSelected}"/>
+<aura:handler name="rowclick" event="c:DataGridRowClick"
+action="{!c.onDataGridRowClick}" />
 	<!-- <lightning:card title="Filter student" iconName="utility:search"> -->
 <div class="slds-m-bottom_small">
 <c:StudentBrowserForm onStudentFilterChange="{!c.onStudentFilterChange}"/>
@@ -22,7 +24,7 @@ action="{!c.onStudentSelected}"/>
 	</lightning:tab>
 	<lightning:tab label="Grid">
 <ui:scrollerWrapper class="scrollerSize">
-<c:DataGrid data="{!v.studentList}" pkField="Id">
+<c:DataGrid data="{!v.studentList}" pkField="Id" aura:id="datagrid">
 <c:DataGridColumn fieldName="Name" label="Name" />
 <c:DataGridColumn fieldName="Title" label="Title"
 hidden="true" />

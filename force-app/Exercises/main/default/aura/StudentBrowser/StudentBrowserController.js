@@ -14,5 +14,12 @@ helper.onInit(component,event,helper);
 			var contactId = event.getParam('contactId');
 			component.set('v.selectedContactId',contactId);
 			helper.broadcastStudentSelected(component);
-		}
+			component.find('datagrid').setSelection(contactId);
+		},
+		onDataGridRowClick: function(component,event,helper) {
+			debugger;
+				component.set('v.selectedContactId', event.getParam('pk'));
+				helper.broadcastStudentSelected(component);
+				}
+		
 })
